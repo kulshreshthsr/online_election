@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Election System</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f6f9; }
+        h1 { color: #333; margin-top: 40px; }
+        form { background: white; display: inline-block; padding: 20px 40px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, select, button { margin: 10px; padding: 10px; width: 80%; border-radius: 6px; border: 1px solid #ccc; }
+        button { background: #0078d7; color: white; cursor: pointer; border: none; }
+        button:hover { background: #005ea6; }
+    </style>
+</head>
+<body>
+    <h1>🗳️ Online Election System</h1>
+    <form method="POST" action="/vote">
+        <input type="text" name="username" placeholder="Enter your name" required><br>
+        <select name="candidate" required>
+            <option value="">-- Select Candidate --</option>
+            {% for name in candidates.keys() %}
+                <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>

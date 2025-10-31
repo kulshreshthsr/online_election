@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: white;
+            color: #0f2027;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login to Election System</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter username" required><br>
+        <input type="password" name="password" placeholder="Enter password (for admin only)"><br>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

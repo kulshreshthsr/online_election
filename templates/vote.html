@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 40px;
+        }
+        label {
+            display: block;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: white;
+            color: #0072ff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cast Your Vote</h1>
+    <form action="/submit_vote" method="post">
+        <label><input type="radio" name="candidate" value="Mahendra Singh Dhoni" required> Mahendra Singh Dhoni</label>
+        <label><input type="radio" name="candidate" value="Virat Kohli" required> Virat Kohli</label>
+        <label><input type="radio" name="candidate" value="Rohit Sharma" required> Rohit Sharma</label>
+        <br>
+        <button type="submit">Submit Vote</button>
+    </form>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
