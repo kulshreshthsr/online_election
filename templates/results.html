@@ -3,56 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Election Results</title>
+    <title>Election Results | Online Election</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
             color: white;
             text-align: center;
+            padding: 40px;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-        }
-        h1 {
-            margin-top: 50px;
         }
         table {
-            margin: 30px auto;
+            margin: auto;
             border-collapse: collapse;
-            width: 50%;
-            background-color: white;
-            color: #1e3c72;
+            background: rgba(255,255,255,0.1);
             border-radius: 10px;
             overflow: hidden;
         }
         th, td {
-            padding: 15px;
-            font-size: 18px;
+            padding: 15px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
         th {
-            background-color: #1e3c72;
-            color: white;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+        tr:last-child td { border-bottom: none; }
         a {
-            display: inline-block;
-            background-color: white;
-            color: #1e3c72;
-            text-decoration: none;
-            padding: 12px 25px;
+            background: white;
+            color: #1565c0;
+            padding: 10px 20px;
             border-radius: 8px;
-            margin-top: 30px;
+            text-decoration: none;
             font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
         }
-        a:hover {
-            background-color: #eaeaea;
-        }
+        a:hover { background: #0d47a1; color: white; }
     </style>
 </head>
 <body>
-    <h1>Election Results</h1>
+    <h1>📊 Election Results</h1>
     <table>
         <tr>
             <th>Candidate</th>
@@ -65,7 +57,8 @@
         </tr>
         {% endfor %}
     </table>
-
-    <a href="/">Back to Home</a>
+    <br>
+    <a href="{{ url_for('home') }}">⬅ Back to Dashboard</a>
 </body>
 </html>
+

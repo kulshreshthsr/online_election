@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message</title>
+    <title>Message | Online Election</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #141e30, #243b55);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2196f3, #42a5f5);
             color: white;
             text-align: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        h2 {
-            margin-top: 100px;
-        }
+        h2 { margin-bottom: 20px; }
         a {
-            display: inline-block;
-            background-color: white;
-            color: #141e30;
-            text-decoration: none;
+            background: white;
+            color: #1565c0;
             padding: 12px 25px;
-            border-radius: 8px;
-            margin-top: 30px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
-        a:hover {
-            background-color: #f0f0f0;
-        }
+        a:hover { background: #0d47a1; color: white; }
     </style>
 </head>
 <body>
-    <h2>{{ msg }}</h2>
-    <a href="/">Back to Home</a>
+    <h2>{{ message }}</h2>
+    <a href="{{ url_for('index') }}">🏠 Go Home</a>
 </body>
 </html>

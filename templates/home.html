@@ -3,43 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Election System</title>
+    <title>Admin Dashboard | Online Election</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #007bff, #00d4ff);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1976d2, #42a5f5);
             color: white;
             text-align: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            padding-top: 100px;
         }
-        .container {
-            margin-top: 15%;
-        }
-        h1 {
-            font-size: 40px;
-        }
+        h1 { font-size: 35px; margin-bottom: 40px; }
         a {
-            display: inline-block;
-            background-color: white;
-            color: #007bff;
-            text-decoration: none;
+            background: white;
+            color: #1565c0;
             padding: 12px 25px;
-            margin: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+            margin: 10px;
         }
-        a:hover {
-            background-color: #f1f1f1;
-        }
+        a:hover { background: #0d47a1; color: white; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/login">Login</a>
-        <h1>Welcome to the Online Election System</h1>
-        <a href="/vote">Go to Voting Page</a>
-        <a href="/results">View Results</a>
-    </div>
+    <h1>Welcome, Admin 👨‍💼</h1>
+    <a href="{{ url_for('results') }}">View Results</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
 </body>
 </html>
