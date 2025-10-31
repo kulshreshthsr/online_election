@@ -1,53 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | Online Election</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-            height: 100vh;
-            margin: 0;
-        }
-        form {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
-            width: 40%;
-            margin: auto;
-            backdrop-filter: blur(10px);
-        }
-        input, button {
-            width: 80%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-        }
-        input { background: rgba(255,255,255,0.9); color: #0d47a1; }
-        button {
-            background: white;
-            color: #1976d2;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover { background: #1565c0; color: white; transform: scale(1.05); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | SmartVote Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #14002b, #000);
+      overflow: hidden;
+      color: white;
+    }
+
+    .glow {
+      text-shadow: 0 0 10px #00eaff, 0 0 25px #6d00ff;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.3;
+      filter: blur(3px);
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    .circle {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #00fff2;
+      border-radius: 50%;
+      top: 15%;
+      left: 10%;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 70px solid transparent;
+      border-right: 70px solid transparent;
+      border-bottom: 120px solid #ff00ff;
+      bottom: 20%;
+      right: 10%;
+    }
+
+    .ring {
+      width: 260px;
+      height: 260px;
+      border: 3px dashed #7b00ff;
+      border-radius: 50%;
+      top: 50%;
+      right: 20%;
+    }
+  </style>
 </head>
-<body>
-    <h2>🔑 Admin Login</h2>
-    <form method="POST">
-        <input type="text" name="username" placeholder="Enter Username" required>
-        <input type="password" name="password" placeholder="Enter Password" required>
-        <button type="submit">Login</button>
+<body class="flex items-center justify-center min-h-screen relative">
+
+  <!-- Floating Neon Shapes -->
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape ring"></div>
+
+  <!-- Login Form -->
+  <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-96 relative z-10 border border-white/20">
+    <h1 class="text-3xl font-extrabold text-center glow mb-6">Admin Login</h1>
+    <form action="/admin_auth" method="POST" class="space-y-5">
+      <div>
+        <label class="block mb-2 text-sm font-medium">Username</label>
+        <input type="text" name="username" required class="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div>
+        <label class="block mb-2 text-sm font-medium">Password</label>
+        <input type="password" name="password" required class="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">Login 🔑</button>
     </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-6 text-sm text-white/70 tracking-wide">
+    © 2025 <span class="font-semibold text-white">Kulshreshtha Voting System</span> — Secure. Smart. Simple.
+  </footer>
+
 </body>
 </html>

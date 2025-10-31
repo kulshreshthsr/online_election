@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Online Election</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1976d2, #42a5f5);
-            color: white;
-            text-align: center;
-            height: 100vh;
-            margin: 0;
-            padding-top: 100px;
-        }
-        h1 { font-size: 35px; margin-bottom: 40px; }
-        a {
-            background: white;
-            color: #1565c0;
-            padding: 12px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            margin: 10px;
-        }
-        a:hover { background: #0d47a1; color: white; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Online Election</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome, Admin 👨‍💼</h1>
-    <a href="{{ url_for('results') }}">View Results</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
+<body class="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-6 bg-white/10 backdrop-blur-md shadow-lg">
+    <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+    <div class="space-x-4">
+      <a href="/results" class="bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 rounded-lg hover:scale-105 transition">View Results</a>
+      <a href="/logout" class="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 transition">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="flex-grow flex flex-col items-center justify-center text-center px-4">
+    <h2 class="text-4xl font-extrabold mb-4">Welcome, Admin 👋</h2>
+    <p class="text-gray-300 mb-8 max-w-md">
+      From this dashboard, you can monitor election results and manage the voting process securely.
+    </p>
+    <div class="space-x-6">
+      <a href="/results" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold px-6 py-3 rounded-full hover:scale-110 transition">View Live Results</a>
+      <a href="/" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full hover:scale-110 transition">Go to Home</a>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 text-gray-400 text-sm">
+    © 2025 Kulshreshtha — Admin Panel
+  </footer>
+
 </body>
 </html>

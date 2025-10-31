@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message | Online Election</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #2196f3, #42a5f5);
-            color: white;
-            text-align: center;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        h2 { margin-bottom: 20px; }
-        a {
-            background: white;
-            color: #1565c0;
-            padding: 12px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        a:hover { background: #0d47a1; color: white; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message | SmartVote</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {font-family:'Poppins',sans-serif;background:radial-gradient(circle at top,#14002b,#000);overflow:hidden;}
+    .shape{position:absolute;opacity:0.3;filter:blur(3px);animation:float 12s ease-in-out infinite alternate;}
+    @keyframes float{0%{transform:translateY(0)rotate(0);}50%{transform:translateY(-25px)rotate(180deg);}100%{transform:translateY(0)rotate(360deg);}}
+    .circle{width:180px;height:180px;border:3px solid #00fff2;border-radius:50%;top:15%;left:10%;}
+    .triangle{width:0;height:0;border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:120px solid #ff00ff;bottom:20%;right:10%;}
+    .ring{width:240px;height:240px;border:3px dashed #7b00ff;border-radius:50%;top:55%;right:20%;}
+    .glow-text{animation:glow 3s ease-in-out infinite alternate;}
+    @keyframes glow{0%{text-shadow:0 0 10px #00eaff,0 0 20px #6d00ff;}50%{text-shadow:0 0 25px #00eaff,0 0 40px #ff00c8;}100%{text-shadow:0 0 10px #00eaff,0 0 20px #6d00ff;}}
+  </style>
 </head>
-<body>
-    <h2>{{ message }}</h2>
-    <a href="{{ url_for('index') }}">🏠 Go Home</a>
+<body class="flex items-center justify-center min-h-screen text-white relative">
+
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape ring"></div>
+
+  <div class="bg-white/10 p-10 rounded-2xl backdrop-blur-md w-[26rem] shadow-xl relative z-10 text-center">
+    <h2 class="text-2xl font-semibold glow-text mb-4">{{ message }}</h2>
+    <a href="/" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:scale-105 transition-transform">Back to Home 🏠</a>
+  </div>
 </body>
 </html>
+

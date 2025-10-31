@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | SmartVote</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #14002b, #000);
+      overflow: hidden;
+    }
+    .shape { position:absolute; opacity:0.3; filter:blur(3px); animation:float 12s ease-in-out infinite alternate; }
+    @keyframes float {0%{transform:translateY(0)rotate(0);}50%{transform:translateY(-25px)rotate(180deg);}100%{transform:translateY(0)rotate(360deg);}}
+    .circle {width:180px;height:180px;border:3px solid #00fff2;border-radius:50%;top:15%;left:10%;}
+    .triangle {width:0;height:0;border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:120px solid #ff00ff;bottom:20%;right:10%;}
+    .ring {width:240px;height:240px;border:3px dashed #7b00ff;border-radius:50%;top:55%;right:20%;}
+    .glow-text {animation:glow 3s ease-in-out infinite alternate;}
+    @keyframes glow {0%{text-shadow:0 0 10px #00eaff,0 0 20px #6d00ff;}50%{text-shadow:0 0 25px #00eaff,0 0 40px #ff00c8;}100%{text-shadow:0 0 10px #00eaff,0 0 20px #6d00ff;}}
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-white relative">
+
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape ring"></div>
+
+  <div class="bg-white/10 p-10 rounded-2xl backdrop-blur-md w-96 shadow-xl relative z-10">
+    <h2 class="text-3xl font-bold text-center mb-6 glow-text">Admin Login</h2>
+    <form method="POST" action="/login" class="space-y-5">
+      <input type="text" name="username" placeholder="Username"
+        class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <input type="password" name="password" placeholder="Password"
+        class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <button type="submit"
+        class="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 font-semibold text-lg hover:scale-105 transition-transform">Login 🔑</button>
+    </form>
+    <div class="text-center mt-5 text-sm">
+      <a href="/" class="text-blue-300 hover:text-purple-400">⬅ Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
